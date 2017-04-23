@@ -1,3 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+void swap(int *a, int *b){
+	int temp;
+	temp  =  *b;
+	*b  =  *a;
+	*a  =  temp;
+}
+void print(int *num){
+	int i=0;
+	for(i = 0;num[i];i++){
+		printf("%d ",num[i] );
+	}printf("\n");
+}
+
 void sort_select(int *num){//选择排序，过滤法找最小值，从第一个位置开始，看哪个值比这个值小，遍历剩余情况，找到后，交换到此。
 	int i = 0,j = 0,min = 0,n = 0;
 	for(n;num[n];n++){}//得到数组长度
@@ -23,7 +39,14 @@ void sort_babo(int *num){//冒泡排序
 			if(num[j] > num[j+1]){
 				swap(&num[j],&num[j+1]);//
 			}
-			print(num);
 		}
 	}
+}
+
+int main(){
+	int i;
+	int num[] = {3,1,2,3,5};	
+	sort_maopao(num);	
+	print(num);
+	return 0;
 }
